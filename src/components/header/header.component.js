@@ -23,7 +23,7 @@ const Header = ({siteTitle}) => (
       </h1>
 
       <nav className={style.nav}>
-        <Link className={style.link} to='about'>about me</Link>
+        <Link className={style.link} to='/about'>about me</Link>
       </nav>
     </div>
   </header>

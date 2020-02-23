@@ -19,7 +19,7 @@ export const pageQuery = graphql`
         mdx(frontmatter: { path: { eq: $path } }) {
             html
             frontmatter {
-                date(formatString: "MMMM DD, YYYY")
+                date(formatString: "DD MMMM, YYYY")
                 path
                 title
             }
