@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 export default function Template({ data }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
+  const { mdx } = data 
+  const { frontmatter, html } = mdx
   return (
     <div className="blog-post">
       <h1>{frontmatter.title}</h1>
@@ -16,7 +16,7 @@ export default function Template({ data }) {
 }
 export const pageQuery = graphql`
     query($path: String!) {
-        markdownRemark(frontmatter: { path: { eq: $path } }) {
+        mdx(frontmatter: { path: { eq: $path } }) {
             html
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
