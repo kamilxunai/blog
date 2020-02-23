@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 export default function Template({ data }) {
-  const { mdx } = data 
+  const { mdx } = data
   const { frontmatter, html } = mdx
   return (
     <div className="blog-post">
