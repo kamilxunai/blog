@@ -1,17 +1,23 @@
-import React from "react"
+import React, { FC } from "react"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const IndexPage = ({ data: { pages } }) => (
+interface Props {
+  readonly data: {
+    pages: any
+  }
+}
+
+const IndexPage: FC<Props> = ({ data: { pages } }) => (
   <Layout>
     <SEO title="home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
     <div className="flex flex-col">
-      {pages.nodes.map(({ frontmatter }) => (
+      {pages.nodes.map(({ frontmatter }: any) => (
         <Link key={frontmatter.path} to={frontmatter.path}>
           {frontmatter.title}
         </Link>
