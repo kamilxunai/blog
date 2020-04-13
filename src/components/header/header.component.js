@@ -5,7 +5,7 @@ const Header = ({siteTitle}) => (
   <header
   >
     <div
-      className="flex items-center justify-between flex-wrap bg-teal-500 mx-auto py-4 px-8"
+      className="container flex items-center justify-between flex-wrap bg-teal-500 mx-auto py-4 px-8"
     >
       <h1 style={{ margin: 0 }}>
         <Link
