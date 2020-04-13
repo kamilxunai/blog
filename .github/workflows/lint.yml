@@ -1,4 +1,4 @@
-name: Type Checking
+name: Linting
 
 on: [push]
 
@@ -19,6 +19,6 @@ jobs:
       - name: install, build, and test
         run: |
           yarn
-          yarn type-check
+          yarn lint
         env:
           CI: true
