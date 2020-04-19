@@ -1,16 +1,11 @@
 import React, { FC } from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { PostContent } from "./post.interface"
 
 interface Props {
   data: {
-    mdx: {
-      body: string
-      frontmatter: {
-        date: string
-        title: string
-      }
-    }
+    mdx: PostContent
   }
 }
 
