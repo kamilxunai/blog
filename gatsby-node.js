@@ -36,5 +36,8 @@ exports.createPages = async ({ actions, graphql }) => {
     itemsPerPage: 2,
     pathPrefix: "/",
     component: path.resolve(`src/templates/blogIndex.tsx`),
+    context: {
+      blogPath: "/",
+    },
   })
 }
