@@ -1,8 +1,20 @@
-import React from "react"
+import React, { FC } from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-export default function Template({ data }) {
+interface Props {
+  data: {
+    mdx: {
+      body: string
+      frontmatter: {
+        date: string
+        title: string
+      }
+    }
+  }
+}
+
+const Template: FC<Props> = ({ data }) => {
   const { mdx } = data
   const { frontmatter, body } = mdx
   return (
@@ -19,9 +31,10 @@ export const pageQuery = graphql`
       body
       frontmatter {
         date(formatString: "DD MMMM, YYYY")
-        path
         title
       }
     }
   }
 `
+
+export default Template
