@@ -13,7 +13,7 @@ const Template: FC<Props> = ({ data }) => {
   const { mdx } = data
   const { frontmatter, body } = mdx
   return (
-    <div className="blog-post">
+    <div className="blog-post p-2">
       <h1>{frontmatter.title}</h1>
       <h2>{frontmatter.date}</h2>
       <MDXRenderer className="blog-post-content">{body}</MDXRenderer>
