@@ -7,8 +7,8 @@ interface Props {
 
 const Header: FC<Props> = ({ siteTitle }) => (
   <header>
-    <div className="container flex items-center justify-between flex-wrap bg-teal-500 mx-auto py-4 px-8">
-      <h1 style={{ margin: 0 }}>
+    <div className="container flex items-center justify-between flex-wrap mx-auto py-4 px-8">
+      <h1 className="text-3xl">
         <Link
           to="/"
           style={{
@@ -23,7 +23,9 @@ const Header: FC<Props> = ({ siteTitle }) => (
       </h1>
 
       <nav>
-        <Link to="/about">about me</Link>
+        <Link className="text-gray-700 hover:text-gray-400" to="/o-mnie">
+          o mnie
+        </Link>
       </nav>
     </div>
   </header>

@@ -9,10 +9,10 @@ interface Props {
 const BlogIndex: FC<Props> = ({ pages }) => {
   return (
     <div>
-      <div className="flex flex-col">
+      <div className="flex flex-col mb-4">
         {pages.nodes.map(({ frontmatter }) => (
           <Link
-            className="bg-teal-300"
+            className="text-xl mb-2"
             key={frontmatter.path}
             to={frontmatter.path}
           >
