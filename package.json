@@ -54,7 +54,8 @@
     "serve": "gatsby serve",
     "type-check": "tsc --noEmit --p tsconfig.json",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \"",
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",
