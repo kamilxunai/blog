@@ -24,7 +24,7 @@
     "gatsby-plugin-tailwindcss": "^1.0.3",
     "gatsby-plugin-typescript": "^2.4.0",
     "gatsby-source-filesystem": "^2.3.0",
-    "gatsby-transformer-remark": "^2.7.3",
+    "gatsby-transformer-remark": "^2.8.3",
     "gatsby-transformer-sharp": "^2.5.0",
     "rc-pagination": "^2.2.0",
     "react": "^16.13.1",
