@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { paginate } = require("gatsby-awesome-pagination")
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -33,11 +34,24 @@ exports.createPages = async ({ actions, graphql }) => {
   paginate({
     createPage,
     items: posts,
-    itemsPerPage: 2,
+    itemsPerPage: 3,
     pathPrefix: "/",
     component: path.resolve(`src/templates/blogIndex.tsx`),
     context: {
       blogPath: "/",
     },
   })
+}
+
+exports.onCreateNode = async ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `Mdx`) {
+    const value = createFilePath({ node, getNode })
+    console.log({ value })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
 }
