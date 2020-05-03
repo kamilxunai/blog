@@ -1,6 +1,5 @@
 const path = require(`path`)
 const { paginate } = require("gatsby-awesome-pagination")
-const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -43,11 +42,10 @@ exports.createPages = async ({ actions, graphql }) => {
   })
 }
 
-exports.onCreateNode = async ({ node, actions, getNode }) => {
+exports.onCreateNode = async ({ node, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `Mdx`) {
-    const value = createFilePath({ node, getNode })
-    console.log({ value })
+    const value = node.frontmatter.path
     createNodeField({
       name: `slug`,
       node,
