@@ -80,7 +80,6 @@ const SEO: FC<Props> = ({
           name: `twitter:description`,
           content: metaDescription,
         },
-        // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
         // @ts-ignore
       ].concat(meta)}
     />
