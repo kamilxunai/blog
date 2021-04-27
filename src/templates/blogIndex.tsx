@@ -16,18 +16,17 @@ interface Props {
       }
     }
   }
-  pathContext: { blogPath: string }
   location: { pathname: string }
 }
 
-const BlogIndexTemplate: FC<Props> = ({ data, pathContext, location }) => {
+const BlogIndexTemplate: FC<Props> = ({ data, location }) => {
   const { pages } = data
   return (
     <Layout>
       <SEO title="home" />
       <BlogIndex pages={pages} />
       <Pagination
-        blogPath={pathContext.blogPath}
+        blogPath={"/"}
         pageInfo={pages.pageInfo}
         totalCount={pages.totalCount}
         path={location.pathname}
