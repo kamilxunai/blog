@@ -12,7 +12,7 @@ const BlogIndex: FC<Props> = ({ pages }) => {
       <div className="flex flex-col mb-4">
         {pages.nodes.map(({ frontmatter }) => (
           <Link
-            className="text-xl mb-2"
+            className="text-xl mb-2 text-gray-500 hover:text-blue-400"
             key={frontmatter.path}
             to={frontmatter.path}
           >
