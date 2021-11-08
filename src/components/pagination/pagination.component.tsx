@@ -27,18 +27,53 @@ const Pagination: FC<Props> = ({ totalCount, pageInfo, path, blogPath }) => {
   const itemRender = (current: ReactNode, type: string, element: ReactNode) => {
     if (type === "page") {
       if (current === 1 || current === 0) {
-        return <Link to={`${blogPath}`}>{current}</Link>
+        return (
+          <Link
+            to={`${blogPath}`}
+            className="hover:text-blue-400 my-0.5 mx-1.5"
+          >
+            {current}
+          </Link>
+        )
       }
-      return <Link to={`${blogPath}${current}`}>{current}</Link>
+      return (
+        <Link
+          to={`${blogPath}${current}`}
+          className="hover:text-blue-400 my-0.5 mx-1.5"
+        >
+          {current}
+        </Link>
+      )
     }
     if (type === "prev") {
       if (current === 1 || current === 0) {
-        return <Link to={`${blogPath}`}>{"<"}</Link>
+        return (
+          <Link
+            to={`${blogPath}`}
+            className="py-0.5 px-1.5 hover:text-blue-400"
+          >
+            {"<"}
+          </Link>
+        )
       }
-      return <Link to={`${blogPath}${current}`}>{"<"}</Link>
+      return (
+        <Link
+          to={`${blogPath}${current}`}
+          className="py-0.5 px-1.5 hover:text-blue-400"
+        >
+          {"<"}
+        </Link>
+      )
     }
     if (type === "next") {
-      return <Link to={`${blogPath}${current}`}>{">"}</Link>
+      return (
+        <Link
+          to={`${blogPath}${current}`}
+          className="py-0.5 px-1.5 hover:text-blue-400"
+        >
+          {">"}
+        </Link>
+      )
     }
     if (type === "jump-next") {
       return <Link to={`${blogPath}${current}`}>...</Link>
