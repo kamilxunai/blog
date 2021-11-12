@@ -2,6 +2,11 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import styled from "styled-components"
+
+const Title = styled.h1`
+  color: red
+`
 
 const Home: NextPage = () => {
   return (
@@ -13,9 +18,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <Title className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        </Title>
 
         <p className={styles.description}>
           Get started by editing{' '}
